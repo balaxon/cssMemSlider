@@ -1,0 +1,14 @@
+body{
+    width: 100%;
+}
+#content{
+    background: yellow;
+    max-width: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 80% 10%;
+    column-gap: 10%;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
