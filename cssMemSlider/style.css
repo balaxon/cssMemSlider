@@ -2,12 +2,17 @@ body{
     margin: 0;
     width: 100%;
 }
+input[type="radio"] {
+    width: 0;
+    height: 0;
+    visibility: hidden;
+}
 #content{
     background: black;
     max-width: 70%;
     margin: auto;
     display: grid;
-    grid-template-rows: 35em 8em;
+    grid-template-rows: 0 0 0 0 0 35em 8em;
     overflow: hidden;
     margin-top: 5em;
 }
@@ -43,16 +48,40 @@ body{
 .activebutton{
     height: 3em;
     vertical-align: middle;
+    display: flex;
+    /* cursor: pointer; */
 }
 .botton{
-    width: 2em;
-    height: 2em;
-    border: 2px solid red;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.5rem solid black;
     border-radius: 50%;
-    background: mistyrose;
+    background: aqua;
     margin: auto;
-    margin-top: 0.4em;
+    cursor: pointer;
+}
+.botton:hover{
+    /* background: white; */
+    cursor: pointer;
+    transform: scale(1.2);
 }
 .activebutton:hover{
-    cursor: pointer;
+    /* cursor: pointer; */
+}
+.botton:active{
+    background: red;
+}
+@keyframes slide {
+    0% {transform: scale(.8);}
+  80% {transform: scale(.5);}
+  100% {transform: scale(1.5);}
+}
+
+#slide1:checked ~ #footer #buttons .activebutton:nth-child(1) .botton,
+#slide2:checked ~ #footer #buttons .activebutton:nth-child(2) .botton,
+#slide3:checked ~ #footer #buttons .activebutton:nth-child(3) .botton,
+#slide4:checked ~ #footer #buttons .activebutton:nth-child(4) .botton,
+#slide5:checked ~ #footer #buttons .activebutton:nth-child(5) .botton{
+  background: red;
+  width: 2em;
 }
